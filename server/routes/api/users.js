@@ -48,31 +48,7 @@ router.post('/register', [
 
         user = await User.query().insert(userObj);
 
-        // return json web token 
-
-        const payload = {
-            user: {
-                id: user.id,
-            }
-        };
-
-        jwt.sign(
-            payload,
-            config.get('jwtSecret'),
-            { expiresIn: 3600 * 100 }, // 3600 seconds * 100 = 100 hours
-            (err, token) => {
-                if (err) throw err;
-                console.log(token);
-                res.json({
-                    user: {
-                        'first_name': user.first_name,
-                        'last_name': user.last_name,
-                        'email': user.email,
-                        token
-                    }
-                });
-            }
-        );
+        return res.status(200).json({ msg: 'Successful registration!' });
 
     } catch (error) {
         console.error(error.message);
