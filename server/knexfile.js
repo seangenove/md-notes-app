@@ -12,10 +12,6 @@ module.exports = {
       password: process.env.DB_PASSWORD || '',
       port: process.env.DB_PORT || ''
     },
-    pool: {
-      min: 2,
-      max: 10
-    },
     migrations: {
       tableName: 'knex_migrations'
     },
