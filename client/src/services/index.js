@@ -29,14 +29,11 @@ export const AppApiRequest = async (endpoint, method, onSuccess, onError, data =
 
     }
 
-    const state = JSON.parse(localStorage.getItem('state'));
+    const state = JSON.parse(localStorage.getItem('notes-state'));
 
     if(state && state.loggedInUser.access_token) {
         setAuthToken(state.loggedInUser.access_token);
     }
-
-    // // For multi-tenancy later on
-    axios.defaults.headers.common['x-account-id'] = 1;
 
     await axios({
         url: endpoint,

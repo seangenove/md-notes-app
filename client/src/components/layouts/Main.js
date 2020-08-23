@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Link, NavLink } from 'react-router-dom';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Activity, Menu, LogOut, ShoppingBag } from 'react-feather';
+import { Menu, LogOut, ShoppingBag } from 'react-feather';
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 
 import { logoutUser } from './../../actions/auth';
@@ -82,7 +82,7 @@ const Sidebar = ({ loggedInUser }) => {
                                     exact
                                     className="nav-link"
                                     activeClassName='active'
-                                    to={`//test_products`} 
+                                    to={`/notes`} 
                                 >
                                     All Notes
                                 </NavLink>
@@ -91,7 +91,7 @@ const Sidebar = ({ loggedInUser }) => {
                                     exact
                                     className="nav-link"
                                     activeClassName='active'
-                                    to={`//test_products/create`}
+                                    to={`/notes/create`}
                                 >
                                     Add Note
                                 </NavLink>

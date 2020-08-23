@@ -14,6 +14,10 @@ import Main from './../src/components/layouts/Main';
 import Login from './../src/components/auth/Login';
 import Register from './../src/components/auth/Register';
 
+// Notes components NotesForm
+import NotesList from './../src/components/notes/NotesList';
+import NotesForm from './../src/components/notes/NotesForm';
+
 import './App.css';
 
 axios.defaults.withCredentials = true;
@@ -28,6 +32,8 @@ function App() {
                     <Route exact path='/register' component={Register} />
 
                     <AuthRoute exact path='/' component={() => (<h1>Authenticated</h1>)} layout={Main}/>
+                    <AuthRoute exact path='/notes' component={NotesList} layout={Main}/>
+                    <AuthRoute exact path='/notes/create' component={NotesForm} layout={Main}/>
                 </Switch>
             </Router>
         </Provider>
